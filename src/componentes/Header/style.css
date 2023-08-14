@@ -23,15 +23,19 @@ header{ width: 100%; height: 100px; background-color: #00AFEF;}
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    position: relative;
 }
 
 .navegacao .navegacao-menu{
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 30px;
     align-items: center;
     height: 50px;
     list-style: none;
+    
+
 }
 
 .navegacao-menu li{
@@ -46,6 +50,21 @@ header{ width: 100%; height: 100px; background-color: #00AFEF;}
     cursor: pointer;
     transition: 0.3s;
 }
+
+.btn-response {
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-response .btn-res{
+    color: #f1f1f1;
+    width: 35px;
+    height: 35px;
+    transition: 0.3s
+}
+
 
 .navegacao-menu li a:hover{
     color: #4c4c4c;
@@ -72,4 +91,27 @@ header{ width: 100%; height: 100px; background-color: #00AFEF;}
 
 .btn-area-cliente span{
     padding-top: 10px;
+}
+
+@media only screen and (max-width: 1024px){
+    .btn-response {
+        display: block;
+    }
+
+   .navegacao .navegacao-menu{
+       display: none;
+       flex-direction: column;
+       flex-wrap: nowrap;
+       z-index: 1;
+       background-color: #00AFEF;
+       width: 100vw;
+       height: auto;
+       position: absolute;
+       top: 100px; 
+       
+    }
+
+    .navegacao .navegacao-menu-open{
+       display: flex;
+    }
 }
